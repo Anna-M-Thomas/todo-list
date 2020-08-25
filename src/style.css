@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+h1 {
+	text-align: center;
+	background-color: #f1f1f1;
+	margin-top: 0;
+	height: 60px;
+	line-height: 60px;
+	margin-bottom: 4%;
+	width: 100%;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	height: 100vh;
+	justify-content: center;
+}
+
+#lists {
+	display: grid;
+	width: 150px;
+	height: 400px;
+	background-color: lightyellow;
+}
+
+.list {
+	grid-row: auto;
+	text-align: center;
+}
+
+#content {
+	display: grid;
+	width: 400px;
+	height: 400px;
+	background-color:pink;
+}
+
+.subcontent {
+	grid-row: auto;
+	text-align: center;
+}
