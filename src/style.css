@@ -21,22 +21,38 @@ h1 {
 }
 
 #lists {
-	display: grid;
-	width: 150px;
+	display: flex;
+	flex-direction: column;
+	width: 15%;
 	height: 400px;
 	background-color: lightyellow;
 }
 
 .list {
-	grid-row: auto;
 	text-align: center;
+	height: 50px;
+	background-color: inherit;
+	outline: none;
+	transition: 0.3s;
+}
+
+.list:hover {
+  background-color: #ddd;
+}
+
+.list:active {
+	background-color: pink;
 }
 
 #content {
 	display: grid;
-	width: 400px;
+	width: 40%;
 	height: 400px;
 	background-color:pink;
+}
+
+#listform {
+	display: none;
 }
 
 .subcontent {

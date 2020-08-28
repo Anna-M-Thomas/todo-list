@@ -1,71 +1,50 @@
 import "./style.css";
+import {increment} from './idmaker';
+import {ToDoItem} from './todoitem';
+import {ListMaker} from './listmaker';
+import {ListHandler} from './listhandler';
+import {formStuff} from './formstuff';
 
-const domStuff = (() =>{
-		let listsDiv = document.getElementById('lists');
-		let contentDiv = document.getElementById('content');
-		let addlist = document.getElementById('addlist');
-		let additem =document.getElementById('additem');
 
-		addlist.addEventListener('click', newList);
-		additem.addEventListener('click', newItem);
+const showTabs = (() =>{
+	//div
+	let listsDiv = document.getElementById('lists');
 
-		function newList() {
-		console.log("You're making a new list");
-		}
-
-		function newItem() {
-			console.log("You're making a new item!");
-		}	
-})();
-
-//Closure that will give each to do item its own id
-let increment = (function(n) {
-  return function() {
-    n += 1;
-    return n+"-ID";
-  }
-}(-1));
-
-//To do item factory function
-const ToDoItem = (title, desc, due, priority, finished, id) => {
-	return {title, desc, due, priority, finished, id};
-}
-
-//List factory function
-const ListMaker = (desc) => {
-	let list = [];
-
-	const addItem = (item) => {
-		list.push(item);
+	for(let list of ListHandler.list){
+		let button = document.createElement('button');
+		button.setAttribute("class", 'list');
+		button.setAttribute("id", list.title);
+		button.textContent = list.title;
+		listsDiv.appendChild(button);
 	}
 
-	const removeItem(id)=>{
-		let index = list.findIndex(obj => obj.id===id);
-		list.splice(index, 1);
-
-	}
-	return {list, addItem, removeItem};
-}
-
-//Hopefully this is a module
-const ListHandler = (() =>{
-	const list = [];
-
-	const addList = (list) => {
-		list.push(item);
-	}
-
-	const removeList = (desc)=>{
-		let index = list.findIndex(obj => obj.desc===desc);
-		list.splice(index, 1);
-	}
-
-	return {list, addList, removeList};
+	let addbutton = document.createElement('button');
+	addbutton.setAttribute("class", 'list');
+	addbutton.setAttribute("id", 'addlist');
+	addbutton.textContent = "Add";
+	listsDiv.appendChild(addbutton);
 
 })();
 
+const switchContent = (() =>{
+	//divs
+	let contentDiv = document.getElementById('content');
+	let lists = document.getElementById('lists');
 
+		lists.addEventListener('click', function(e){
+			if (event.target.nodeName == "BUTTON") {
+				if(event.target.id ==('addlist')){
+					formStuff.showForm();
+				} else {
+					let id = event.target.id;
+					let tabbedlist = ListHandler.findList(id);
+					let p = document.createElement('p');
+					p.textContent = `Title: ${tabbedlist.title} Description: ${tabbedlist.desc} and todo items come later`;
+					contentDiv.appendChild.p;
+				}
+			}
+		});
 
-
+})();
 
 
