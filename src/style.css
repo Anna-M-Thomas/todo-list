@@ -1,0 +1,165 @@
+/*html {
+	background-image: url(forest.jpg);
+}*/
+
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  background: url('forest.jpg');
+}
+
+h1 {
+	color:white;
+	text-align: center;
+	background-color: inherit;
+	margin-bottom: 4%;
+	width: 100%;
+}
+
+h2 {
+  margin-bottom: 0;
+}
+
+h2, .description {
+	padding: 3px;
+}
+
+[contenteditable="true"] {
+  text-decoration: underline green double;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	height: 80vh;
+	justify-content: center;
+	margin-bottom: 5%;
+}
+
+.leftbox p {
+  margin: 0;
+  padding: 20px;
+  transition: background 0.2s;
+  flex: 1;
+  font-family:'helvetica neue';
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.menu:hover {
+  background-color: #abc5a1;
+}
+
+.rightbox, .leftbox{
+    background: #FFFFAF;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+    overflow: scroll;
+}
+
+.leftbox {
+  width: 12%;
+  border-right: 2px solid #C67546;
+  border-top: 1px solid #79B58F;
+  border-left: 1px solid #79B58F;
+  border-bottom: 1px solid #79B58F;
+}
+
+.rightbox {
+	width: 60%;
+	font-size: 16px;
+  text-align: center;
+  border-top: 1px solid #79B58F;
+  border-right: 1px solid #79B58F;
+  border-bottom: 1px solid #79B58F;
+}
+
+.listdesc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.details, .labels {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item {
+  flex: 1; 
+}
+
+.details input {
+  display: none;
+}
+
+.details input + label:before {
+  content: "◻️";
+  margin-right: 10px;
+}
+
+.details input:checked + label:before {
+  content: "🌲";
+}
+
+.details input:enabled + label:before {
+    /* border-bottom: 3px double green;*/
+     text-decoration: underline green double;
+}
+
+.additemcontainer {
+  align-items: center;
+  justify-content: center;
+}
+
+.selected {
+	background-color: #abc5a1;
+}
+
+.additem {
+  display: flex;
+}
+
+.fa-plus-circle {
+  line-height: 1.5;
+}
+
+.labels p:first-child {
+  margin-left: 38px; 
+}
+
+.labels p:last-child {
+  margin-right: 34px; 
+}
+
+.labels p {
+  flex: 1;
+  margin: 0;
+  font-style: italic;
+}
+
+.finished {
+	text-decoration: line-through;
+}
+
+i {
+  color: #494f38;
+  padding: 10px;
+}
+
+.underlined{
+      border-bottom: 1px solid rgba(121, 181, 143, 0.8);
+  }
+
+
+ footer {
+ 	width: 40%;
+ 	font-size: 12px;
+ 	text-align: center;
+ 	background-color: rgba(255, 255, 255, 0.8);
+ 	margin: 0 auto;
+ }
+
+
